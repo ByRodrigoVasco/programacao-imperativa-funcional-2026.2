@@ -10,7 +10,6 @@ int main(){
     int n = 5;
 	printf("\n%d | %d | %d", --n, n+1, ++n);
     printf("\n%d\n", n);
-	return 0;
 
     system("PAUSE");
     return 0;
