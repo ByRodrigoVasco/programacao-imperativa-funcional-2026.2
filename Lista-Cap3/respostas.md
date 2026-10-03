@@ -88,3 +88,11 @@ for (;;) {
         break;
 }
 ```
+
+# Exercicio 04
+
+a. O break encerra o laço imediatamente, sem executar o resto do corpo e sem testar a condição de novo. A execução continua na primeira instrução depois do laço.
+
+b. O continue pula o resto das instruções do corpo do laço e vai direto para a próxima iteração. No for, a expressão executada logo após o continue é a de incremento, e depois dela vem o teste.
+
+c. Apenas o laço interno é interrompido. O laço externo continua normalmente com a sua próxima iteração.
