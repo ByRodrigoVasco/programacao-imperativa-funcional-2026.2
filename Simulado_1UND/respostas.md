@@ -75,3 +75,53 @@ a. O while testa a condição antes de executar o bloco, então o bloco pode ser
 b. O for é mais elegante quando o número de repetições é conhecido e o laço é controlado por um contador (ex: percorrer de 1 a 100). Ele reúne a inicialização, o teste e o incremento em uma única linha, o que deixa o controle do laço visível de uma vez. No while, essas três partes ficam espalhadas pelo código.
 
 c. Não é erro de compilação, é erro de lógica. O ponto e vírgula vira o corpo do laço (uma instrução vazia). Se condicao for verdadeira, como nada dentro do laço altera condicao, o programa fica preso em um laço infinito testando a condição sem fazer nada. O bloco que vem logo depois, que parecia ser o corpo do laço, nunca é executado.
+
+# Exercicio 06
+
+Código da questão:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int i;
+    for (i = 1; i <= 10; i++) {
+        if (i == 5) continue;
+        if (i == 8) break;
+        int soma = 0;
+        soma += i * i;
+    }
+    printf("Soma final = %d\n", soma);
+    system("PAUSE");
+    return 0;
+}
+```
+
+a. A variável soma foi declarada dentro do bloco do for, então ela só existe dentro desse bloco. No printf, que está fora do bloco, o identificador soma não está declarado, e o compilador acusa o erro `'soma' undeclared`.
+
+b. As iterações com i = 1, 2, 3, 4, 6 e 7 são executadas por completo. Quando i = 5, o continue pula o resto do corpo e vai direto para o incremento (i++), então o quadrado de 5 não é somado. Quando i = 8, o break encerra o laço imediatamente, então as iterações 8, 9 e 10 nunca chegam a somar nada.
+
+c. Código corrigido:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int i;
+    int soma = 0;
+    for (i = 1; i <= 10; i++) {
+        if (i == 5) continue;
+        if (i == 8) break;
+        soma += i * i;
+    }
+    printf("Soma final = %d\n", soma);
+    system("PAUSE");
+    return 0;
+}
+```
+
+Soma: 1 + 4 + 9 + 16 + 36 + 49 = 115.
+
+Saída: `Soma final = 115`.
