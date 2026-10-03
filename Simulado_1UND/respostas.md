@@ -67,3 +67,11 @@ c. `!k && (x + y >= 7.5)` → !k = !0 = 1; x+y = 7.5 e 7.5 >= 7.5 é verdadeiro;
 d. `!(i == j) || (y / x == 2.0)` → i==j = 2==3 = 0; !0 = 1; como o lado esquerdo do `||` já é verdadeiro, o resultado é 1 (e y/x = 5.0/2.5 = 2.0 também seria verdadeiro). **Resultado: 1**.
 
 e. `i == 2 && j == 4 || k == 0` → precedência: `==` > `&&` > `||`. i==2 = 1; j==4 = 0; 1 && 0 = 0; k==0 = 1; 0 || 1 = 1. **Resultado: 1**.
+
+# Exercicio 05
+
+a. O while testa a condição antes de executar o bloco, então o bloco pode ser executado zero vezes (se a condição já começar falsa). O do-while executa o bloco primeiro e só testa a condição no final, então o bloco é executado pelo menos uma vez.
+
+b. O for é mais elegante quando o número de repetições é conhecido e o laço é controlado por um contador (ex: percorrer de 1 a 100). Ele reúne a inicialização, o teste e o incremento em uma única linha, o que deixa o controle do laço visível de uma vez. No while, essas três partes ficam espalhadas pelo código.
+
+c. Não é erro de compilação, é erro de lógica. O ponto e vírgula vira o corpo do laço (uma instrução vazia). Se condicao for verdadeira, como nada dentro do laço altera condicao, o programa fica preso em um laço infinito testando a condição sem fazer nada. O bloco que vem logo depois, que parecia ser o corpo do laço, nunca é executado.
