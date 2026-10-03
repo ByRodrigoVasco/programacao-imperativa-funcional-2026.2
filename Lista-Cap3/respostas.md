@@ -96,3 +96,37 @@ a. O break encerra o laço imediatamente, sem executar o resto do corpo e sem te
 b. O continue pula o resto das instruções do corpo do laço e vai direto para a próxima iteração. No for, a expressão executada logo após o continue é a de incremento, e depois dela vem o teste.
 
 c. Apenas o laço interno é interrompido. O laço externo continua normalmente com a sua próxima iteração.
+
+# Exercicio 05
+
+Código da questão:
+
+```c
+int i, j;
+for (i = 0, j = 10; i < j; i++, j--) {
+    printf("i = %d, j = %d | soma = %d\n", i, j, i + j);
+}
+```
+
+a. 5 iterações. Na sexta verificação i = 5 e j = 5, então i < j é falso e o laço termina.
+
+b.
+```
+i = 0, j = 10 | soma = 10
+i = 1, j = 9 | soma = 10
+i = 2, j = 8 | soma = 10
+i = 3, j = 7 | soma = 10
+i = 4, j = 6 | soma = 10
+```
+
+c.
+```c
+int i, j;
+i = 0;
+j = 10;
+while (i < j) {
+    printf("i = %d, j = %d | soma = %d\n", i, j, i + j);
+    i++;
+    j--;
+}
+```
