@@ -53,3 +53,17 @@ Estado inicial: a=2, b=4, c=5, d=10.
 4. `a += b += c += 5;` → primeiro c += 5 → c = 8 + 5 = 13 (**c = 13**); depois b += c → b = 32 + 13 = 45 (**b = 45**); por fim a += b → a = 11 + 45 = 56 (**a = 56**).
 
 Valores finais: **a = 56, b = 45, c = 13, d = 10**.
+
+# Exercicio 04
+
+Variáveis: int i = 2, j = 3, k = 0; float x = 2.5, y = 5.0.
+
+a. `i < j + 2` → j + 2 = 5; 2 < 5 é verdadeiro. **Resultado: 1**.
+
+b. `2 * i - 5 <= j - 4` → 2*2-5 = -1; j-4 = -1; -1 <= -1 é verdadeiro. **Resultado: 1**.
+
+c. `!k && (x + y >= 7.5)` → !k = !0 = 1; x+y = 7.5 e 7.5 >= 7.5 é verdadeiro; 1 && 1 = 1. **Resultado: 1**.
+
+d. `!(i == j) || (y / x == 2.0)` → i==j = 2==3 = 0; !0 = 1; como o lado esquerdo do `||` já é verdadeiro, o resultado é 1 (e y/x = 5.0/2.5 = 2.0 também seria verdadeiro). **Resultado: 1**.
+
+e. `i == 2 && j == 4 || k == 0` → precedência: `==` > `&&` > `||`. i==2 = 1; j==4 = 0; 1 && 0 = 0; k==0 = 1; 0 || 1 = 1. **Resultado: 1**.
