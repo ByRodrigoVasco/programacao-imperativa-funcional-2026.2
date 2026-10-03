@@ -56,3 +56,35 @@ Saída: `Soma final = 285`.
 - **Visibilidade (escopo)**: é a região do código onde um identificador pode ser usado.
 - **Escopo de bloco**: uma variável declarada dentro de um bloco `{ }` só é visível dentro desse bloco (e dos blocos internos a ele).
 - **Tempo de vida**: é o período em que a variável existe na memória. Uma variável de bloco é criada quando a execução entra no bloco e destruída quando sai dele. Por isso, no código original, soma era recriada e zerada a cada iteração.
+
+# Exercicio 03
+
+Código da questão:
+
+```c
+// Trecho A: Incremento por divisão
+for (a = 36; a > 0; a /= 2)
+    printf("%d\t", a);
+
+// Trecho B: Omissão de inicialização e incremento
+for (; (ch = getch()) != 'X' ;)
+    printf("%c", ch + 1);
+
+// Trecho C: Omissão completa de expressões
+for (;;)
+    printf("Laço Infinito\n");
+```
+
+a. `36	18	9	4	2	1` (separados por tabulação). Como a é inteiro, 9 / 2 = 4 e 1 / 2 = 0, e com a = 0 o teste a > 0 é falso.
+
+b. O laço lê caracteres do teclado com getch() (sem mostrar na tela) até o usuário digitar 'X'. Para cada caractere lido, imprime o caractere seguinte da tabela ASCII, porque `ch + 1` soma 1 ao código do caractere (ex: digitando 'a' é impresso 'b'). Os parênteses são necessários porque o operador `!=` tem precedência maior que o `=`. Sem eles, a expressão seria `ch = (getch() != 'X')`, e ch receberia o resultado da comparação (0 ou 1) em vez do caractere digitado.
+
+c. Usando o comando break dentro do laço junto com uma condição. Exemplo:
+
+```c
+for (;;) {
+    printf("Laço Infinito\n");
+    if (getch() == 's')
+        break;
+}
+```
