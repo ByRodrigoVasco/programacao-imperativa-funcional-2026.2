@@ -130,3 +130,34 @@ while (i < j) {
     j--;
 }
 ```
+
+# Exercicio 06
+
+Código da questão:
+
+```c
+int x = 0;
+while (x++ < 5);
+printf("Valor final de x = %d\n", x);
+```
+
+a. `Valor final de x = 6`.
+
+b. Como o incremento é pós-fixado, primeiro o valor atual de x é comparado com 5 e só depois x é incrementado:
+
+1. 0 < 5 é verdadeiro, x passa a 1.
+2. 1 < 5 é verdadeiro, x passa a 2.
+3. 2 < 5 é verdadeiro, x passa a 3.
+4. 3 < 5 é verdadeiro, x passa a 4.
+5. 4 < 5 é verdadeiro, x passa a 5.
+6. 5 < 5 é falso, mas o incremento acontece mesmo assim e x passa a 6. O laço termina.
+
+c.
+```c
+int x = 0;
+while (x < 5) {
+    x++;
+}
+x++;
+printf("Valor final de x = %d\n", x);
+```
